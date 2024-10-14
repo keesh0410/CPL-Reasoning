@@ -1,0 +1,22 @@
+round: 2
+
+# llm
+policy_model_dir: ./models/policy_model_round2
+value_model_dir: ./models/value_model_round2
+
+# sampling_params
+temperature: 0.7
+n_generate_samples: 3
+stop: ["</step>", "</solution>", "<question>"]
+max_tokens: 1500
+
+# mcts
+iterations: 100
+max_depth: 6
+positive_reward: 1.0
+negative_reward: -1.0
+
+
+step_delim: "</step>\n"
+seed: 1234
+batch_size: -1
