@@ -3,7 +3,7 @@ import random
 from transformers import AutoTokenizer
 
 
-data = json.load(open('/home/v-tianlwang/mycontainer_srgxws/projects/v-tianlwang/for_yilong/CPL_code_data/data/r2_15k.json', 'r'))
+data = json.load(open('mcts_plan/data/15k_iter100.json.json', 'r'))
 
 apo_data = []
 TOO_MANY_STEPS = "Fail to sove the problem within limited steps!!!"
