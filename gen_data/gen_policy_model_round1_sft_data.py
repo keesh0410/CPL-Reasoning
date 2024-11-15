@@ -17,10 +17,10 @@ def dfs(question, tree, node_idx, prefix):
                 continue
             if tree[child_node_idx]['solution'] and tree[child_node_idx]['q_value'] == 1.0:
                 solution = tree[child_node_idx]['solution'].replace('<endsolution>', '').replace('Detailed Implementation:', '').strip()
-                cur_output = f"\n</plan>\n<solution>\n{solution}\n</solution>"
+                cur_output = f"</plan>\n<solution>\n{solution}\n</solution>"
                 answers[question].append(prefix + cur_output)    
             elif tree[child_node_idx]['step_plan']:
-                cur_output = f"<step>\n{tree[child_node_idx]['step_plan'].replace('<endstep>', '').strip()}\n</step>"
+                cur_output = f"<step>\n{tree[child_node_idx]['step_plan'].replace('<endstep>', '').strip()}\n</step>\n"
                 cur_prefix = prefix + cur_output
                 dfs(question, tree, child_node_idx, cur_prefix)
         
